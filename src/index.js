@@ -49,9 +49,9 @@ loadMoreBtn.addEventListener('click', () => {
       } else {
         renderPictures(pictures);
         pageScroll();
-        loadMoreBtn.style.visibility = 'visible';
         lightbox.refresh();
       }
+      loadMoreBtn.style.visibility = 'visible';
     })
     .catch(error => console.log(error));
 });
