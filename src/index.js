@@ -61,7 +61,7 @@ async function getPictures(searchTerm) {
     `https://pixabay.com/api/?key=34679609-800cb3ce66b97456154e1ce44&q=${searchTerm}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`
   );
   totalHits = await response.data.totalHits;
-  totalPages = (await response.data.totalHits) / 40;
+  totalPages = Math.ceil((await response.data.totalHits) / 40);
   const pictures = await response.data.hits;
   return pictures;
 }
